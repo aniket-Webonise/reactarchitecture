@@ -1,0 +1,8 @@
+node_modules/*
+public/*
+build/*
+dist/*
+config/*
+__tests__
+package.json
+package-lock.json

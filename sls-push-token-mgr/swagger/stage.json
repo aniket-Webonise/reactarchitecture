@@ -1,0 +1,117 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "API for managing user tokens for Push notification",
+    "version" : "2019-07-24T15:30:50Z",
+    "title" : "stage-sls-push-token-mgr"
+  },
+  "host" : "4qri478bti.execute-api.us-east-1.amazonaws.com",
+  "basePath" : "/stage",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/notification" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "PushNotificationSendRequest",
+          "description" : "Request body description",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/PushNotificationSendRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/GenericSuccessResponse"
+            }
+          },
+          "409" : {
+            "description" : "409 response",
+            "schema" : {
+              "$ref" : "#/definitions/APIErrorResponseWithMessage"
+            }
+          }
+        }
+      }
+    },
+    "/tokens" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "TokenRegistrationRequest",
+          "description" : "Request body description",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/TokenRegistrationRequest"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/GenericSuccessResponse"
+            }
+          },
+          "409" : {
+            "description" : "409 response",
+            "schema" : {
+              "$ref" : "#/definitions/APIErrorResponseWithMessage"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "APIErrorResponseWithMessage" : {
+      "type" : "object",
+      "properties" : {
+        "message" : {
+          "type" : "string"
+        }
+      }
+    },
+    "PushNotificationSendRequest" : {
+      "type" : "object",
+      "properties" : {
+        "flavor" : {
+          "type" : "string"
+        },
+        "title" : {
+          "type" : "string"
+        },
+        "message" : {
+          "type" : "string"
+        }
+      }
+    },
+    "TokenRegistrationRequest" : {
+      "type" : "object",
+      "properties" : {
+        "flavor" : {
+          "type" : "string"
+        },
+        "deviceId" : {
+          "type" : "string"
+        },
+        "pushToken" : {
+          "type" : "string"
+        }
+      }
+    },
+    "GenericSuccessResponse" : {
+      "type" : "object",
+      "properties" : {
+        "message" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

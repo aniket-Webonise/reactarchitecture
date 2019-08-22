@@ -1,0 +1,21 @@
+export const APIConst = {
+  BaseURL: 'https://unikrn.com/',
+  APIVersion: 'apiv2/',
+  testAPI: 'https://www.reddit.com/r/reactjs.json',
+  privacyPolicyAPI: 'https://unikrn.com/legal/privacy_policy',
+  termsOfServiceAPI: 'https://unikrn.com/legal/tc',
+  URNConst: {
+    GameURN: 'events/current=1/coin',
+    GameListURN: 'games',
+    EventList: 'events/daterange',
+    EventStat: 'event/getstats',
+    NewsTips: 'news/articles',
+    GetTournament: 'event/gettournament',
+    GetMarkets: 'event',
+    GetEvents: 'events',
+    TournamentWithID: '/tournament_id=',
+    GameWithID: 'game_id=',
+    Current: '/current=1',
+  },
+  BaseTwitchURL: 'https://player.twitch.tv/?channel=',
+};

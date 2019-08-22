@@ -1,0 +1,50 @@
+documentation:
+# this is general info about the API
+api:
+    info:
+        version: '1'
+        title:  Unikrn Expo Push Token Manager
+        description: API for managing user tokens for Push notification
+
+# Now we describe all the models that we use
+models:
+
+    - name: GenericSuccessResponse
+      contentType: 'application/json'
+      schema:
+          type: 'object'
+          properties:
+              message:
+                  type: 'string'
+
+    - name: TokenRegistrationRequest
+      contentType: 'application/json'
+      schema:
+          type: 'object'
+          properties:
+              deviceId:
+                  type: 'string'
+              pushToken:
+                  type: 'string'
+              flavor:
+                  type: 'string'
+
+    - name: PushNotificationSendRequest
+      contentType: 'application/json'
+      schema:
+          type: 'object'
+          properties:
+              title:
+                  type: 'string'
+              message:
+                  type: 'string'
+              flavor:
+                  type: 'string'
+
+    - name: APIErrorResponseWithMessage
+      contentType: 'application/json'
+      schema:
+          type: 'object'
+          properties:
+              message:
+                  type: 'string'
